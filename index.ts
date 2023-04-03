@@ -11,6 +11,7 @@ bot.on('message', async (msg) => {
     const text = msg.text;
     const user = await User.findOne({user_tg_id});
     if (text === "/start") {
+
         await bot.sendMessage(user_tg_id, `Добрий день, ${msg.chat.first_name}, це телеграм бот який дозволить вам здійснювати покупки з магазину NorlandShop`);
         if (user) {
             await bot.sendMessage(user_tg_id, `З поверненням, приємних покупок)`, {
