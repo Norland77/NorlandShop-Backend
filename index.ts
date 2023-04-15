@@ -6,7 +6,7 @@ const User = require('./models/User.ts');
 const {addUser} = require('./services/userService.ts');
 
 bot.on('message', async (msg) => {
-    await mongoose.connect(`mongodb+srv://Norland:090902020909@norlandshopdb.lcnwneo.mongodb.net/?retryWrites=true&w=majority`)
+    await mongoose.connect(`mongodb+srv://Norland:090902020909@norlandshopdb.lcnwneo.mongodb.net/test`)
     const user_tg_id = msg.chat.id;
     const text = msg.text;
     const user = await User.findOne({user_tg_id});
